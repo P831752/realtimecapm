@@ -1,0 +1,83 @@
+###
+GET http://localhost:4004/odata/v4/catalog
+
+###
+GET http://localhost:45765/odata/v4/catalog/$metadata
+
+###
+GET http://localhost:4004/odata/v4/catalog/EmployeeSet
+
+###
+GET http://localhost:4004/odata/v4/catalog/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C197A7FB
+
+###
+GET http://localhost:4004/odata/v4/catalog/EmployeeSet?$filter=nameFirst eq 'Susan'
+
+###
+GET http://localhost:4004/odata/v4/catalog/EmployeeSet/$count
+
+
+###update date
+PATCH http://localhost:4004/odata/v4/catalog/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C19787FB
+Content-Type: application/json
+
+{
+       "salaryAmount": 99
+}
+
+###get employee
+DELETE http://localhost:4004/odata/v4/catalog/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C19787FB
+Content-Type: application/json
+
+
+### insert data with post
+POST http://localhost:4004/odata/v4/catalog/EmployeeSet
+Content-Type: application/json
+
+{
+      "nameFirst": "Rami5",
+      "nameMiddle": "Sarah9",
+      "nameLast": "Gains9",
+      "nameInitials": null,
+      "sex": "F",
+      "language": "E",
+      "phoneNumber": "+1 224 374 522",
+      "email": "viola.gains@itelo.info",
+      "loginName": "GAINSV",
+      "Currency_code": "USD",
+      "salaryAmount": 100,
+      "accountNumber": "222333444",
+      "bankId": "121",
+      "bankName": "My Bank of Antioch"
+    }
+
+###
+GET http://localhost:4004/odata/v4/catalog/POs
+
+###
+GET http://localhost:4004/odata/v4/catalog/POs/74867AD200E41EDBA5D8B0C98DC30052
+
+### read pos
+POST  http://localhost:4004/odata/v4/catalog/POs/74867AD200E41EDBA5D8B0C98DC30052/boost
+Content-Type: application/json
+
+{
+}
+
+###Boosting a order
+POST http://localhost:4004/odata/v4/catalog/POs/74867AD200E41EDBA5D8B0C98DC28052/largestOrder()
+Content-Type: application/json
+
+{
+
+}
+
+### read pos
+GET http://localhost:4004/odata/v4/catalog/ProductView
+
+### read pos
+GET http://localhost:4004/odata/v4/catalog/ProductView/74867AD200E41EDBA5D8B06B26EB4052?$expand=To_Items
+
+###
+GET http://localhost:4004/odata/v4/catalog/ReadEmployeeSet
+
