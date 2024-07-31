@@ -3,6 +3,8 @@ using {anubhav.db.master as master} from '../db/datamodel';
 using {anubhav.db.transaction as transaction} from '../db/datamodel';
 using { cappo.cds } from '../db/CDSViews';
 
+//changes are from VS tool
+
 service CatalogService {
     //@readonly
     entity EmployeeSet as projection on master.employees;    
