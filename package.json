@@ -7,11 +7,13 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^8",
-    "express": "^4"
+    "express": "^4",
+    "@sap/cds-hana": "^2"
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.6",
     "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
     "@sap/ux-specification": "^1.120.15"
   },
   "scripts": {
@@ -21,5 +23,10 @@
   "sapux": [
     "app/purchaseorderapp",
     "app/purchaseorderapp"
-  ]
+  ],
+  "cds": {
+    "requires": {
+      "db": "hana"
+    }
+  }
 }

@@ -7,7 +7,11 @@ using { cappo.cds } from '../db/CDSViews';
 
 service CatalogService {
     //@readonly
-    entity EmployeeSet as projection on master.employees;    
+    entity EmployeeSet @(restrict: [ 
+                        { grant: ['READ'], to: 'Viewer', where: 'bankName = $user.BankName' },
+                        { grant: ['WRITE'], to: 'Admin' }
+                        ]) as projection on master.employees;
+   
      entity BusinessPartnerSet as projection on master.businesspartner;
      //entity POs as projection on transaction.purchaseorder;
 
