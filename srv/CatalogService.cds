@@ -5,7 +5,7 @@ using { cappo.cds } from '../db/CDSViews';
 
 //changes are from VS tool
 
-service CatalogService {
+service CatalogService @(path : 'CatalogService', requires: 'authenticated-user') {
     //@readonly
     entity EmployeeSet @(restrict: [ 
                         { grant: ['READ'], to: 'Viewer', where: 'bankName = $user.BankName' },

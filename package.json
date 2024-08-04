@@ -8,7 +8,8 @@
   "dependencies": {
     "@sap/cds": "^8",
     "express": "^4",
-    "@sap/cds-hana": "^2"
+    "@sap/cds-hana": "^2",
+    "@sap/xssec": "^3"
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.6",
@@ -26,7 +27,8 @@
   ],
   "cds": {
     "requires": {
-      "db": "hana"
+      "db": "hana",
+      "auth": "xsuaa"
     }
   }
 }
